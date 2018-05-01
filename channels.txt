@@ -1,0 +1,514 @@
+[
+        {
+            "channelName": "mathbff",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Mathbff"}
+        ,
+        {
+            "channelName": "mathantics",
+            "channelId": "",
+            "playListId": "",
+            "comment": "mathantics"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL3128E15B8D159842",
+            "comment": "Khan Academy, Algebra Worked Examples List"}
+        ,
+        {
+            "channelName": "tecmath",
+            "channelId": "",
+            "playListId": "",
+            "comment": "tecmath"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "UC1_uAIS3r8Vu6JjXWvastJg",
+            "playListId": "",
+            "comment": "Mathologer"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "UCYO_jab_esuFRV4b17AJtAw",
+            "playListId": "",
+            "comment": "3Blue1Brown"}
+        ,
+        {
+            "channelName": "Numberphile",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Numberphile"}
+        ,
+        {
+            "channelName": "kylepearce3",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Kyle Pearce (too many)"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLAF816DCEEB2A2F7B",
+            "comment": "Trigonometry Tutorials by patrickJMT"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL8gnhgRJl1x4rjaE3rM9C1v-jWy4kkgMC",
+            "comment": "PatrickJMT Algebra"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLANMHOrJaFxPCjR2enLZBRgtZgjtXJ0MJ",
+            "comment": "PatrickJMT The Fundamentals of Logic"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLANMHOrJaFxMobwlFyaSZdxoh-nl6-o1X",
+            "comment": "PatrickJMT Puzzle Problems - Fun Problems!"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLANMHOrJaFxM2UbRPM9YNQ1YT3s4gX4Rp",
+            "comment": "PatrickJMT Inverse Trigonometric Functions"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLANMHOrJaFxN4Ny3jqaPvTeZpxkZlxRa5",
+            "comment": "PatrickJMT Game Theory"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLF1E94C1948483103",
+            "comment": "PatrickJMT - Optimization Problem #1"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL4098211B87018422",
+            "comment": "PatrickJMT Combinations - Counting Using Combinations"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL7DA48E186D1D8049",
+            "comment": "PatrickJMT - Logarithms"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLDDDAA7E0D61A5CFA",
+            "comment": "PatrickJMT - Conic Sections"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLAC5EA62150BD3A5A",
+            "comment": "PatrickJMT - Complex Numbers"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL9F8908A958AF7DC9",
+            "comment": "PatrickJMT -  Functions : The basics"}
+        , //QQQQ Note still missing many playlists of PatrickJMT
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL7AF1C14AF1B05894",
+            "comment": "Khan Acemdy Algebra"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL238F98B2C6422A95",
+            "comment": "Khan Acemdy Pre-algebra"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL1C68557896CFABA8",
+            "comment": "Khan Acemdy Developmental Math 2"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL50D1D09ABE9CE271",
+            "comment": "Khan Acemdy Developmental Math"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLE23E2FDF6E935778",
+            "comment": "Khan Acemdy Developmental Math 3"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLD6DA74C1DBF770E7",
+            "comment": "Khan Acemdy Trigonometry"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL301908982CBFE20D",
+            "comment": "Khan Academy Arithmetic"}
+        ,
+        {
+            "channelName": "standupmaths",
+            "channelId": "",
+            "playListId": "",
+            "comment": "standupmaths"}
+        ,
+        {
+            "channelName": "Vihart",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Vihart"}
+        ,
+        {
+            "channelName": "yourteachermathhelp",
+            "channelId": "",
+            "playListId": "",
+            "comment": "MathHelp (too many - not pulling all)"}
+        ,
+        {
+            "channelName": "MathMeeting",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Math Meeting"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL5KkMZvBpo5ASS7uoLegCA5i6clf4zNsq",
+            "comment": "Eddie Woo EPB1 (Relative Frequency & Probability)"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL5KkMZvBpo5COUEncIR00qy3aq6wYhD64",
+            "comment": "Eddie Woo Y7 Maths: Fractions & Percentages"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL5KkMZvBpo5DNtpt3UXFH2pXEn5GM3Z0F",
+            "comment": "Eddie Woo MM2 (Perimeter, Area & Volume)"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL5KkMZvBpo5AD2kCGbz4241HbbGzlRqUq",
+            "comment": "Eddie Woo DS1-3 (Basic Data & Statistics)"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL5KkMZvBpo5Cfz3KdRqBcXuVakBanFwuW",
+            "comment": "Eddie Woo AM3 (Further Algebraic Skills & Techniques)"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL5KkMZvBpo5AElNjo5a2CaIWg6TlLd6vW",
+            "comment": "Eddie Woo Measurement & Geometry"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "UCjwOWaOX-c-NeLnj_YGiNEg",
+            "playListId": "",
+            "comment": "Tipping Point Math"}
+        ,
+        {
+            "channelName": "DrJamesTanton",
+            "channelId": "",
+            "playListId": "",
+            "comment": "DrJamesTanton"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "UCib_J32VI8rQI_LCFXn1XAA",
+            "playListId": "",
+            "comment": "James Tanton (exploding dots)"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "UCXZIDlJ_DgzrEwYop2s3JOQ",
+            "playListId": "",
+            "comment": "National Museum of Mathematics"}
+        ,
+        {
+            "channelName": "ArtOfTheProblem",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Art of the Problem"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL1C537F4A57B3F09B",
+            "comment": "Brightstorm - Geometry"},
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLD286B3F281B219D4",
+            "comment": "Brightstorm - Algebra 1"},
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLB2606C762CF0B898",
+            "comment": "Brightstorm - Precalculus"},
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL2EC6AA23B1563190",
+            "comment": "Brightstorm - Algebra 2"},
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PL8FE0AF517D088CB8",
+            "comment": "Brightstorm - Trigonometry"},
+        {
+            "channelName": "",
+            "channelId": "",
+            "playListId": "PLlssSNhNZaPPpwByvVFNqCRr6T57JtODr",
+            "comment": "Brightstorm - Pre-Algebra"},
+        {
+            "channelName": "Computerphile",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Computerphile"}
+        ,
+        {
+            "channelName": "",
+            "channelId": "UCiTjCIT_9EXV1Wp1cY0zaUA",
+            "playListId": "",
+            "comment": "Don't Memorise"},
+        {
+            "channelName": "MindYourDecisions",
+            "channelId": "",
+            "playListId": "",
+            "comment": "MindYourDecisions"}
+        ,
+        {
+            "channelName": "minutephysics",
+            "channelId": "",
+            "playListId": "",
+            "comment": "minutephysics"}
+        ,
+        { 
+            "channelName": "singingbanana",
+            "channelId": "",
+            "playListId": "",
+            "comment": "singingbanana"}
+        ,
+        {
+            "channelName": "MathTV",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Math TV"}
+        ,
+        {
+            "channelName": "spoonfulofmaths",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Spoonful of Maths"}
+        ,
+        {
+            "channelName": "DrSaradaHerke",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Sarada Herke"}
+        ,
+        {
+            "channelName": "StudyPug",
+            "channelId": "",
+            "playListId": "",
+            "comment": "StudyPug"}
+        ,
+        {
+            "channelName": "Vsauce",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Vsauce"}
+        ,
+        {
+            "channelName": "Taylorns34",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Welch Labs"}
+        ,
+        {
+            "channelName": "MathMammoth",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Math Mammoth"},
+        {
+            "channelName": "",
+            "channelId": "UCLo4jBc9fQkVPbmdnSL4IRg",
+            "playListId": "",
+            "comment": "The Global Math Project"},
+        {
+            "channelName": "",
+            "channelId": "UC_SvYP0k05UKiJ_2ndB02IA",
+            "playListId": "",
+            "comment": "Black Pen Red Pen"},
+        {
+            "channelName": "",
+            "channelId": "UCxqAWLTk1CmBvZFPzeZMd9A",
+            "playListId": "",
+            "comment": "Domain of Science"},
+        {
+            "channelName": "",
+            "channelId": "UCsooa4yRKGN_zEE8iknghZA",
+            "playListId": "",
+            "comment": "TED-Ed"},
+        {
+            "channelName": "",
+            "channelId": "UCY5NDinr2975LghozXAeTWQ",
+            "playListId": "",
+            "comment": "OxfordSparks"},
+        {
+            "channelName": "",
+            "channelId": "UCs4aHmggTfFrpkPcWSaBN9g",
+            "playListId": "",
+            "comment": "PBS Infinite Series"},
+        {
+            "channelName": "",
+            "channelId": "UC9yt3wz-6j19RwD5m5f6HSg",
+            "playListId": "",
+            "comment": "Think Twice"},
+        {
+            "channelName": "",
+            "channelId": "UC_OjzlVO230cu7vQYUSNNDw",
+            "playListId": "",
+            "comment": "TyYann"},
+        {
+            "channelName": "",
+            "channelId": "UCG32MfGLit1pcqCRXyy9cAg",
+            "playListId": "",
+            "comment": "Statistics Learning Centre"},
+        {
+            "channelName": "",
+            "channelId": "UCciX2VHmW7Ix_FVWQ_u4RwQ",
+            "playListId": "",
+            "comment": "GoldfishAndRobin"},
+        {
+            "channelName": "ebalzarini",
+            "channelId": "",
+            "playListId": "",
+            "comment": "the AllAroundMathGuy"},
+        {
+            "channelName": "",
+            "channelId": "UCKl7MXLRrk6hnWuObFwKxdg",
+            "playListId": "",
+            "comment": "Cole's World of Mathematics"},
+        {
+            "channelName": "blc0527",
+            "channelId": "",
+            "playListId": "",
+            "comment": "blc0527"},
+        {
+            "channelName": "",
+            "channelId": "UCfG0OGu8IR9KqgZiDQOHIfg",
+            "playListId": "",
+            "comment": "Kealing Geometry"},
+        {
+            "channelName": "",
+            "channelId": "UClOR1BiPyOkkIAnv9Cmj4iw",
+            "playListId": "",
+            "comment": "Mario's Math Tutoring"},
+        {
+            "channelName": "",
+            "channelId": "UC7iAQJ5Ldf1lZSz96TUns0Q",
+            "playListId": "",
+            "comment": "The Bearded Math Man"},
+        {
+            "channelName": "EHSmathwithmurphy",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Math With Murphy"},
+        {
+            "channelName": "Mathfortress",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Math Fortress"},
+        {
+            "channelName": "",
+            "channelId": "UCtBtcQJ8_jsrjPzb8i1tOsA",
+            "playListId": "",
+            "comment": "MashUp Math"},
+        {
+            "channelName": "teachertubemath",
+            "channelId": "",
+            "playListId": "",
+            "comment": "TeacherTube Math"},
+        {
+            "channelName": "MrBrianMcLogan",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Brian McLogan"},
+        {
+            "channelName": "DLBmaths",
+            "channelId": "",
+            "playListId": "",
+            "comment": "DLBmaths"},
+        {
+            "channelName": "profrobbob",
+            "channelId": "",
+            "playListId": "",
+            "comment": "ProfRobBob"},
+        {
+            "channelName": "TheIntegralCALC",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Krista King"},
+        {
+            "channelName": "yaymath",
+            "channelId": "",
+            "playListId": "",
+            "comment": "yaymath"},
+        {
+            "channelName": "mathtutordvd",
+            "channelId": "",
+            "playListId": "",
+            "comment": "mathtutordvd"},
+        {
+            "channelName": "bullcleo1",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Mathispower4u"},
+        {
+            "channelName": "derekowens",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Derek Owens"},
+        {
+            "channelName": "MySecretMathTutor",
+            "channelId": "",
+            "playListId": "",
+            "comment": "MySecretMathTutor"},
+        {
+            "channelName": "FortBendTutoring",
+            "channelId": "",
+            "playListId": "",
+            "comment": "FortBendTutoring"},
+        {
+            "channelName": "mrskrummel",
+            "channelId": "",
+            "playListId": "",
+            "comment": "Michelle Krummel"},
+        {
+            "channelName": "MyWhyU",
+            "channelId": "",
+            "playListId": "",
+            "comment": "MyWhyU"}
+        ]
