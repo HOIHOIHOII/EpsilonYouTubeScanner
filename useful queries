@@ -1,0 +1,24 @@
+
+top videos
+
+select vm.video_id,
+	   'https://www.youtube.com/watch?v=' || vm.video_id as url,
+	   vm.published_at,
+	   vm.title,
+	   vm.description,
+	   vm.tags,
+	   vm.duration,
+	   vm.last_update,
+	   vts_r.cur_view_count,
+	   vts_r.one_day_view_count,
+	   vm.is_maths_content
+		from videos_meta as vm 
+			left join (select video_id, 
+					   		  max(sample_time) as sample_time,
+							  max(view_count) as cur_view_count, 
+							  (max(view_count) - min(view_count)) as one_day_view_count 
+							  from videos_timeseries group by video_id
+					  ) as vts_r 
+					  on vm.video_id = vts_r.video_id 
+		order by vts_r.cur_view_count desc;		
+

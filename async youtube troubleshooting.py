@@ -39,10 +39,7 @@ def tic(t):
 urls =['https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCDWIvJwLJsE4LG1Atne2blQ&key={0}&q=1'.format(apikey)
         ,'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCDWIvJwLJsE4LG1Atne2blQ&key={0}&q=2'.format(apikey)
         ,'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCDWIvJwLJsE4LG1Atne2blQ&key={0}&q=3'.format(apikey)
-        
         ]
-
-
 
 ###Example 4: 3 Youtube v3 API search queries for 3 different channels.
 # urls = ['https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCDWIvJwLJsE4LG1Atne2blQ&key={0}&q=1'.format(apikey)
