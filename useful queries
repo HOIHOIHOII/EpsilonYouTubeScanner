@@ -1,24 +1,141 @@
 
 top videos
 
-select vm.video_id,
-	   'https://www.youtube.com/watch?v=' || vm.video_id as url,
-	   vm.published_at,
-	   vm.title,
-	   vm.description,
-	   vm.tags,
-	   vm.duration,
-	   vm.last_update,
-	   vts_r.cur_view_count,
-	   vts_r.one_day_view_count,
-	   vm.is_maths_content
-		from videos_meta as vm 
-			left join (select video_id, 
-					   		  max(sample_time) as sample_time,
-							  max(view_count) as cur_view_count, 
-							  (max(view_count) - min(view_count)) as one_day_view_count 
-							  from videos_timeseries group by video_id
-					  ) as vts_r 
-					  on vm.video_id = vts_r.video_id 
-		order by vts_r.cur_view_count desc;		
+select
+	chm.channel_title,
+	videos_by_views.*
+	from 
+	(select vm.video_id,
+	 		vm.channel_id,
+		   'https://www.youtube.com/watch?v=' || vm.video_id as url,
+		   vm.published_at,
+		   vm.title as video_title,
+		   vm.description,
+		   vm.tags,
+		   vm.duration,
+		   vm.last_update,
+		   vts_r.cur_view_count,
+		   vts_r.delta_view_count,
+		   vm.is_maths_content
+			from videos_meta as vm 
+				left join (select video_id, 
+								  max(sample_time) as sample_time,
+								  max(view_count) as cur_view_count, 
+								  (max(view_count) - min(view_count)) as delta_view_count
+								  from videos_timeseries group by video_id
+						  ) as vts_r 
+						  on vm.video_id = vts_r.video_id 
+			order by vts_r.cur_view_count desc
+	) as videos_by_views
+	left join (select channel_id,
+			  			title as channel_title
+			  			from public.channels_meta
+			  ) as chm
+	on chm.channel_id = videos_by_views.channel_id
+where channel_title not in ('Vsauce')
+fetch first 1000 rows only;
+						
 
+Yoni dataset
+
+select 
+	cm.channel_id,
+	cm.title,
+	count(vmts.video_id),
+	sum(vmts.view_count) as total_views,
+	sum(vmts.duration) as total_duration
+	from public.channels_meta as cm 
+	left join
+	  (select
+	   	vm.channel_id,
+	   	vm.video_id,
+	   	vm.duration,
+	   	max(vts.view_count) as view_count
+	   from public.videos_meta as vm 
+	   left join public.videos_timeseries as vts
+	   on vm.video_id = vts.video_id
+	   group by 
+	   	vm.channel_id, 
+	   	vm.video_id, 
+	   	vm.duration
+	  ) as vmts
+	on cm.channel_id = vmts.channel_id
+	group by cm.channel_id
+	order by total_views desc
+;
+
+
+###########################   hours watched per month estimate
+
+-- select  vm.video_id, 
+-- 		vm.duration, 
+-- 		vt.sample_time, 
+-- 		vt.view_count
+-- 	from public.videos_meta as vm
+-- 		left join (public.videos_timeseries) as vt
+-- 		on vm.video_id = vt.video_id
+
+-- -- Create a function that always returns the first non-NULL item
+-- CREATE OR REPLACE FUNCTION public.first_agg ( anyelement, anyelement )
+-- RETURNS anyelement LANGUAGE SQL IMMUTABLE STRICT AS $$
+--         SELECT $1;
+-- $$;
+ 
+-- -- And then wrap an aggregate around it
+-- CREATE AGGREGATE public.FIRST (
+--         sfunc    = public.first_agg,
+--         basetype = anyelement,
+--         stype    = anyelement
+-- );
+ 
+-- -- Create a function that always returns the last non-NULL item
+-- CREATE OR REPLACE FUNCTION public.last_agg ( anyelement, anyelement )
+-- RETURNS anyelement LANGUAGE SQL IMMUTABLE STRICT AS $$
+--         SELECT $2;
+-- $$;
+ 
+-- -- And then wrap an aggregate around it
+-- CREATE AGGREGATE public.LAST (
+--         sfunc    = public.last_agg,
+--         basetype = anyelement,
+--         stype    = anyelement
+-- );
+
+
+
+
+WITH ordered_timeseries as (
+		select *
+	 	from public.videos_timeseries
+ 		order by video_id, sample_time
+	 ),
+	 views_min_max as (
+		 select video_id,
+		 		first(sample_time) as sample_f,
+		 		last(sample_time) as sample_l,
+		 		first(view_count) as view_f,
+		 		last(view_count) as view_l
+		 from ordered_timeseries
+		 group by video_id
+	 ),
+	vpd as (SELECT
+	video_id,
+	sample_f,
+	view_l - view_f as delta_views,
+	(view_l - view_f)/(extract(epoch from (sample_l - sample_f))/86400) as views_per_day
+	from views_min_max
+	where extract(epoch from (sample_l - sample_f)) > 0
+	order by delta_views desc) --views per day, delta_views
+select
+-- 	vm.video_id,
+	max(extract(epoch from (timestamp '2018-08-06 00:00:00' - vpd.sample_f))/86400) as sample_age_days,
+	sum(vpd.delta_views * vm.duration) * 0.35 *1.5 as est_total_view_time_30_days
+-- 	vpd.delta_views,
+-- 	vm.duration
+-- 	vpd.views_per_day,
+-- 	extract(epoch from (timestamp '2018-08-06 00:00:00' - vm.published_at))/86400 as video_age_days
+	from  vpd
+	left join public.videos_meta as vm
+	on vpd.video_id=vm.video_id
+	where vm.channel_id not in ('UC6nSFpj9HTCZ5t-N3Rm3-HA','UC4a-Gbdw7vOaccHmFo40b9g','UCsooa4yRKGN_zEE8iknghZA','UCUHW94eEFW7hkUMVaZz4eDg') --not Vsauce, Khan Academy, TED-Ed, minute physics 
+	;
