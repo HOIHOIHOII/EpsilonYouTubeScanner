@@ -1,5 +1,5 @@
 # EpsilonYoutubeScanner
-Discovers videos by channel and monitors engagement statistics on a manually selected group of videos
+Discovers videos by channel and monitors video engagement statistics
 
 ## Requirements
 * Postgres database matching schema implicit in code
