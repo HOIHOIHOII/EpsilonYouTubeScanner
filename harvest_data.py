@@ -25,10 +25,10 @@ def send_query(query):
 
 def async_fetch(requests):
     unsent_requests = [grequests.get(r) for r in requests]
-    "Sending {0} asynchronous requests...".format(len(unsent_requests))
+    print "Sending {0} asynchronous requests...".format(len(unsent_requests))
     responses = grequests.map(unsent_requests)
     status_codes = [response.status_code for response in responses]
-    print "Status codes returned: {}".format(len(status_codes), list(set(status_codes)))
+    print "Status codes returned: {}".format(list(set(status_codes)))
     results = [response.json() for response in responses]
     return results
 
@@ -497,9 +497,10 @@ def get_channel_vids(channelId, channel_partition):
 
 ###################:---database operations---:###################
 
-def make_db_connection():
+def make_db_connection(dbname, user, password):
     """connect to the postgres database, return connection and cursor"""
-    conn = psycopg2.connect("dbname=postgres user=postgres password=nicholas")
+
+    conn = psycopg2.connect("dbname={0} user={1} password={2}".format(dbname, user, password))
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     return conn, cur
 
@@ -557,14 +558,17 @@ def load_new_videos(video_meta, db_connection, db_cursor):
     db_connection.commit()
     return None
     
-def update_videos(db_connection, db_cursor):
+def update_videos(db_connection, db_cursor, n=0):
     """collect and write to db a videos_timeseries record for all videos_meta records."""
     #get video ids from database
     now_f = datetime.datetime.strftime(datetime.datetime.utcnow(), "%Y-%m-%d %H:%M:%S")
     print "current utc time is {}".format(now_f)
-    cur.execute("SELECT video_id FROM public.videos_meta WHERE next_update < timestamp %(now)s ;", {"now":now_f})
-    videos = flatten(cur.fetchall())
-    
+    if n==0:    
+        db_cursor.execute("SELECT video_id FROM public.videos_meta WHERE next_update < timestamp %(now)s ;", {"now":now_f})
+    else:
+        db_cursor.execute("SELECT video_id FROM public.videos_meta WHERE next_update < timestamp %(now)s limit %(n)s;", {"now":now_f, "n":n})
+    videos = flatten(db_cursor.fetchall())
+
     print "Collecting and storing timeseries records for {} videos:".format(len(videos))
 #     print videos
     #group and batch for processing
@@ -634,8 +638,11 @@ def update_channels(db_connection, db_cursor):
 #     print "{0} : {1}".format(ch, ch_v_count(ch))
 
 if __name__ == '__main__':
+    dbname = "postgres"
+    user = "postgres"
+    password = "nicholas"
 
-    conn, cur = make_db_connection()
+    conn, cur = make_db_connection(dbname, user, password)
 
     update_channels(conn, cur)
 
