@@ -14,6 +14,7 @@ apikey_path = os.path.join(os.path.join(os.getcwd(),os.pardir),"apikey.txt")
 
 with open(apikey_path,"rb") as f:
     apikey = f.readline()
+    apikey = apikey.strip()
 
 #sending queries
 
