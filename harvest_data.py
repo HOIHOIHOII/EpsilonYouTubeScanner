@@ -194,14 +194,36 @@ def make_query_get_video_details(video_ids):
     s = write_request("videos", query_params)
     return s
 
+
+def the_first_of_next_month(d):
+    year = d.year 
+    month = d.month
+    if month == 12:
+        year += 1
+        month = 1
+    else:
+        month += 1
+    first_of_next_month  = datetime.datetime(year,month,1)
+    return first_of_next_month
+
 def schedule(publishedAt):
     """schedule next timeseries sample"""
     now = datetime.datetime.utcnow()
     video_age_days = (now - publishedAt).days
+    
+    #fussy scheduling by video age
     if video_age_days < 10:
-        nextupdate = now + datetime.timedelta(hours=6)
+        waittime = datetime.timedelta(hours=6)
+        nextupdate = now + waittime
     else:
-        nextupdate = now + datetime.timedelta(days=5)
+        waittime = datetime.timedelta(days=5)
+        nextupdate = now + waittime
+
+    #but always do first of month update if that's sooner
+    time_until_first_of_month = the_first_of_next_month(now) - now
+    if waittime > time_until_first_of_month:
+        nextupdate = now + waittime
+
     return nextupdate
 
 #+++++++++++++++++++++
