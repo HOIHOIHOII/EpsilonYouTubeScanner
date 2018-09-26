@@ -208,7 +208,7 @@ def the_first_of_next_month(d):
 
 def schedule(publishedAt):
     """schedule next timeseries sample"""
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.utcnow() 
     video_age_days = (now - publishedAt).days
     
     #fussy scheduling by video age
@@ -218,11 +218,12 @@ def schedule(publishedAt):
     else:
         waittime = datetime.timedelta(days=5)
         nextupdate = now + waittime
-
+    
     #but always do first of month update if that's sooner
-    time_until_first_of_month = the_first_of_next_month(now) - now
+    first = the_first_of_next_month(now)
+    time_until_first_of_month = first - now
     if waittime > time_until_first_of_month:
-        nextupdate = now + waittime
+        nextupdate = first
 
     return nextupdate
 
