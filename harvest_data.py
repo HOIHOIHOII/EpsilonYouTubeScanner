@@ -8,6 +8,7 @@ import psycopg2
 import psycopg2.extras
 import re
 from itertools import groupby
+import sys
 
 #put the textfile containing the apikey into the parent folder of your local git repo
 apikey_path = os.path.join(os.path.join(os.getcwd(),os.pardir),"apikey.txt")
@@ -211,7 +212,6 @@ def schedule(publishedAt):
     now = datetime.datetime.utcnow() 
     video_age_days = (now - publishedAt).days
     
-    #fussy scheduling by video age
     if video_age_days < 10:
         waittime = datetime.timedelta(hours=6)
         nextupdate = now + waittime
@@ -662,12 +662,24 @@ def update_channels(db_connection, db_cursor):
 #     print "{0} : {1}".format(ch, ch_v_count(ch))
 
 if __name__ == '__main__':
-    dbname = "postgres"
-    user = "postgres"
-    password = "nicholas"
 
-    conn, cur = make_db_connection(dbname, user, password)
+    userX = "postgres"
+    passwordX = "nicholas"
+
+    args = sys.argv
+
+    try:
+        dbnameX = args[1]
+    except IndexError:
+        dbnameX = "postgres"
+
+    try:
+        n = args[2]
+    except IndexError:
+        n=0
+
+    conn, cur = make_db_connection(dbnameX, userX, passwordX)
 
     update_channels(conn, cur)
 
-    update_videos(conn, cur)
+    update_videos(conn, cur, n)
