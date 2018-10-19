@@ -11,7 +11,11 @@ from itertools import groupby
 import sys
 
 #put the textfile containing the apikey into the parent folder of your local git repo
-apikey_path = os.path.join(os.path.join(os.getcwd(),os.pardir),"apikey.txt")
+current_file_path =  os.path.realpath(__file__)
+parent_dir_to_current_file_path =  os.path.join(os.path.dirname(current_file_path),os.pardir)
+apikey_path = os.path.join(parent_dir_to_current_file_path, "apikey.txt")
+
+# apikey_path = os.path.join(os.path.join(os.getcwd(),os.pardir),"apikey.txt")
 
 with open(apikey_path,"rb") as f:
     apikey = f.readline()
