@@ -3,6 +3,8 @@ Tracks YouTube video engagement statistics
 
 EYTS periodically collects the number of subscribers, views, likes, dislikes and comments for selected YT videos and channels. EYTS collects all data by manual construction of GET requests to the YT API. EYTS does not use the standard toolset present in `google-api-python-client`.
 
+Currently used by mathematics EduTech company [Oneonepsilon](https://oneonepsilon.com/epsilonstream/#data-analysis), to produce an estimate of hours of mathematics videos watched on YouTube each month.
+
 ### Features
 
 * Extracts video metadata and timeseries for every video posted in history of tracked YT channel
